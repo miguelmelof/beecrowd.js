@@ -1,0 +1,14 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var senha = 2002 
+var tentiva;
+while(tentativa != senha) {
+    var tentativa = parseInt(prompt("senha")); 
+    if ( tentativa != senha) { 
+        console.log("Senha Invalida"); 
+    }
+    if( tentativa == senha) {
+        console.log("Acesso Permitido");
+    }
+}
