@@ -1,0 +1,38 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var nJogos = 0
+var vI = 0
+var vG = 0 
+var E = 0 
+var i = 0
+var x;
+var gI;
+var gG;
+while(i != 2) {
+    var [gI,gG] = prompt("placar").split(" ").map(Number); 
+    if (gI > gG) {
+        vI++
+    } else if (gG > gI) {
+        vG++
+    } else {
+        E++
+    }
+    nJogos++
+    var x = parseInt(prompt("Novo grenal (1-sim 2-nao)"))
+    console.log("Novo grenal (1-sim 2-nao)")
+    if(x === 2) {
+        i++
+        break;
+    }
+}
+console.log(nJogos + " grenais")
+console.log("Inter:" + vI);
+console.log("Gremio:" + vG);
+console.log("Empates:" + E);
+if(vI > vG) {
+    console.log("Inter venceu mais")
+} else if(vG > vI) {
+    console.log("Gremio venceu mais")
+}
