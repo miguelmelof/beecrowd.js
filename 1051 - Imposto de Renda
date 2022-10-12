@@ -1,0 +1,19 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var s = parseFloat(prompt("salario"));
+var faixa1 = s - 2000
+var faixa2 = s - 3000
+var faixa3 = s - 4500
+if (s <= 2000) {
+    console.log("Isento")
+} else if (s <= 3000) {
+   var imposto01 = faixa1 * 0.08
+   console.log("R$ " + imposto01.toFixed(2))    
+} else if (s <= 4500) {
+    var imposto02 = (1000 * 0.08) + (faixa2 * 0.18)
+    console.log("R$ " + imposto02.toFixed(2))    
+} else {
+    var imposto03 = (1000 * 0.08) + (1500 * 0.18) + (faixa3 * 0.28)
+    console.log("R$ " + imposto03.toFixed(2))    
+}
