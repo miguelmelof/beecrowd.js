@@ -1,0 +1,32 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var A = 0 
+var E = 0 
+var H = 0
+var M = 0
+var X = 0
+var i = 1
+var z;
+var y; 
+var n = parseInt(prompt("n"));
+while(i <= n) {
+    var [z,y] = prompt("valores").split(" ").map(String); 
+    if(y === "A") {
+        A++
+    } else if(y === "E") {
+        E++
+    } else if(y === "H") {
+        H++
+    } else if(y === "M") {
+        M++
+    } else if(y === "X") {
+        X++
+    }
+    i++
+}
+console.log(X + " Hobbit(s)");
+console.log(H + " Humano(s)");
+console.log(E + " Elfo(s)"); 
+console.log(A + " Anao(s)");
+console.log(M + " Mago(s)");
