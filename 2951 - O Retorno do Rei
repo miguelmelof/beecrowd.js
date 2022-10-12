@@ -1,0 +1,34 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var [t1,vs] = prompt("testes e valor").split(" ").map(Number);
+var l = [];
+var num = [];
+var soma = 0;
+
+for(var i = 1; i <= t1;i++) {
+	 var [le,n] = prompt("letra e número").split(" ");
+	 n = parseInt(n);
+	 l.push(le);
+	 num.push(n);
+}
+
+var t3 = parseInt(prompt("Quantas runas?"));
+var runas = prompt("Quais as runas?").split(" ");
+
+for(var t = 0;t < t3;t++) {
+	for(var r = 0;r < l.length;r++) {
+		if(runas[t] == l[r]) {
+			soma = soma + num[r];
+		}
+	}
+}
+
+if(soma >= vs) {
+	console.log(soma);
+	console.log("You shall pass!");
+} else {
+	console.log(soma);
+	console.log("My precioooous");
+}
