@@ -1,0 +1,13 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+  var [S,T,F] = prompt("valores").split(" ").map(Number);
+    var tempototal = (S + T + F) 
+    if (tempototal >= 24) {
+        console.log(tempototal - 24); 
+    } else if (tempototal < 0) {
+        console.log(24 + (tempototal))
+    }
+    else {
+        console.log(tempototal)
+    }
