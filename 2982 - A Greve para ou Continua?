@@ -1,0 +1,24 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var n = parseInt(prompt("n"))
+var t; 
+var c; 
+var nc;
+var g = 0
+var v = 0 
+for(i = 1; i <= n; i++){
+    var [t,c] = prompt(".").split(" ").map(String); 
+    var nc = parseInt(c) 
+    if (t == "G") {
+        g = g + nc 
+    }
+    else if(t == "V"){
+        v = v + nc
+    }
+}
+if ( v >= g) {
+    console.log("A greve vai parar.");
+} else {
+    console.log("NAO VAI TER CORTE, VAI TER LUTA!");
+}
