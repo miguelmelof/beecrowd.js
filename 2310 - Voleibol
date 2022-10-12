@@ -1,0 +1,29 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var n = parseInt(prompt("N"));
+var saques = 0
+var acertosSaques = 0
+var bloqueios = 0 
+var acertosBloqueios = 0 
+var ataques = 0 
+var acertosAtaques = 0 
+for(var i = 0 ; i < n ; i++) {
+    var tentativas = []
+    var acertos = []
+    var nome = prompt("nome")
+    tentativas = prompt("tentantivas").split(" ").map(Number);
+    acertos = prompt("acertos").split(" ").map(Number);
+    var saques = saques + tentativas[0];
+    var acertosSaques = acertosSaques + acertos[0]; 
+    var bloqueios = bloqueios + tentativas[1];
+    var acertosBloqueios = acertosBloqueios + acertos[1] 
+    var ataques = ataques + tentativas[2]
+    var acertosAtaques = acertosAtaques + acertos[2];
+}
+var saque = (acertosSaques / saques) * 100
+var bloqueio = (acertosBloqueios / bloqueios) * 100
+var ataque = (acertosAtaques / ataques) * 100 
+console.log("Pontos de Saque: " + saque.toFixed(2) + " %.");
+console.log("Pontos de Bloqueio: " + bloqueio.toFixed(2) + " %.");
+console.log("Pontos de Ataque: " + ataque.toFixed(2) + " %.");
