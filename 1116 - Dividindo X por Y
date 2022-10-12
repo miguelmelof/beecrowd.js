@@ -1,0 +1,18 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var n = parseInt(prompt("numero de divisoes"));
+var i = 1 
+while(i <= n) {
+    var[a,b] = prompt("valores a ser dividido").split(" ").map(Number);
+    if ( b === 0) {
+        console.log("divisao impossivel");
+    }
+    else {
+      console.log((a / b).toFixed(1))  ;
+    }
+    var i = i + 1 
+}
+
+
+
