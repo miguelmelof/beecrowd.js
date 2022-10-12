@@ -1,0 +1,42 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var par = []
+var npar = 0
+var impar = []
+var nimpar = 0
+var x;
+var i = 0
+for(i = 0 ; i < 15 ; i = i + 1) {
+    var x = parseInt(prompt("X")); 
+    if((x % 2) == 0) {
+        par.push(x)
+        npar++ 
+        if (npar == 5) {
+            for(npar = 0; npar < 5 ; npar++) {
+                console.log("par[" + npar + "] = " + par[npar])
+            }
+            var par = []
+            var npar = 0 
+        }
+       
+    }
+    else {
+        impar.push(x)
+        nimpar++ 
+        if (nimpar == 5) {
+            for(nimpar = 0; nimpar < 5 ; nimpar++) {
+                console.log("impar[" + nimpar + "] = " + impar[nimpar])
+            }
+            var impar = []
+            var nimpar = 0 
+        }
+
+    }
+}
+for(nimpar = 0; nimpar < impar.length ; nimpar++) {
+    console.log("impar[" + nimpar + "] = " + impar[nimpar])
+}
+for(npar = 0; npar < par.length ; npar++) {
+    console.log("par[" + npar + "] = " + par[npar])
+}
