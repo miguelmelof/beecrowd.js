@@ -1,0 +1,11 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var x = parseInt(prompt("valor"));
+y = 2
+if(x > 5 && x < 2000) {
+while (x >= y) {
+console.log(y + "^2 = " + (y * y))
+var y = y + 2 
+}
+}
