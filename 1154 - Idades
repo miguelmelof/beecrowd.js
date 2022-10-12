@@ -1,0 +1,17 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var x; 
+var total = 0
+var i = 0
+while(true) {
+var x = parseInt(prompt("x"))
+if(x >= 0 ) {
+var total = total + x 
+i++
+} 
+if(x < 0) {
+    break;
+}
+}
+console.log((total / i).toFixed(2));
