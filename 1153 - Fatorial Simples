@@ -1,0 +1,11 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+var n = parseInt(prompt("n"))
+var nFatorial = 1
+var i = 1
+while(i <= n) {
+    var nFatorial = nFatorial * i
+    i++
+}
+console.log(nFatorial);
