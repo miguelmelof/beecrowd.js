@@ -1,0 +1,14 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var S = 0
+var x = 1
+var y = 1
+var s;
+
+for(i = 1; i <= 39;i++) {
+s = x / y
+S = S + s 
+x = x + 2
+y = y * 2 
+}
+console.log((S).toFixed(2));
