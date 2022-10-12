@@ -1,0 +1,22 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var a = parseInt(prompt("X"));
+var b = parseInt(prompt("Y"));
+var soma = 0 
+if(b > a) {
+    var aux = a 
+    var a = b 
+    var b = aux 
+}
+if((a % 2) != 0) {
+    var a = a - 1
+}
+while( a != b) {
+    var b = b + 1 
+    if((b % 2) != 0) {
+        var soma = soma + b
+    }
+} 
+console.log(soma);
